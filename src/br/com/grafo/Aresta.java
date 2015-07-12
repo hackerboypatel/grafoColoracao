@@ -1,0 +1,37 @@
+package br.com.grafo;
+
+/**
+ *
+ * @author '-Maxsuel
+ */
+public class Aresta {
+
+    private Vertice v1;
+    private Vertice v2;
+    private int peso;
+
+    public Vertice getV() {
+        return v1;
+    }
+
+    public void setV(Vertice v) {
+        this.v1 = v;
+    }
+
+    public Vertice getV2() {
+        return v2;
+    }
+
+    public void setV2(Vertice v2) {
+        this.v2 = v2;
+    }
+
+    public int getPeso() {
+        return peso;
+    }
+
+    public void setPeso(int peso) {
+        this.peso = peso;
+    }
+
+}
