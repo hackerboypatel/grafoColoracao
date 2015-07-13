@@ -10,11 +10,11 @@ public class Aresta {
     private Vertice v2;
     private int peso;
 
-    public Vertice getV() {
+    public Vertice getV1() {
         return v1;
     }
 
-    public void setV(Vertice v) {
+    public void setV1(Vertice v) {
         this.v1 = v;
     }
 
