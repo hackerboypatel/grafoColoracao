@@ -99,9 +99,10 @@ public class Grafo {
     }
 
     public int[][] colorirGrafo(Grafo grafo) {
-        String nomeCor[] = {"Azul","Roxo","Ciano","Rosa","Vermelho","Laranja","Verde","Violeta","Alizarina","Carmesim","Coral", "Escarlate","Magenta","Marrom","Amarelo"}; 
+        String nomeCor[] = {"Azul", "Roxo", "Ciano", "Rosa", "Vermelho", "Laranja", "Verde", "Violeta", "Alizarina", "Carmesim", "Coral", "Escarlate", "Magenta", "Marrom", "Amarelo"};
         ArrayList<Integer> verticesAdjacentes = new ArrayList<>();
         grafo.vertices = ordernarVertices();
+        System.out.println("colorir");
         boolean colorir = true;
         int cor = 1;
 
@@ -139,7 +140,7 @@ public class Grafo {
             }
         }
         for (int i = 0; i < cores[0].length; i++) {
-            System.out.print("Vertice:" + cores[0][i] + "("+nomeCor[cores[1][i]]+")\n");
+            System.out.print("Vertice:" + cores[0][i] + "(" + nomeCor[cores[1][i]] + ")\n");
         }
         return cores;
     }
@@ -147,8 +148,10 @@ public class Grafo {
     private ArrayList<Vertice> ordernarVertices() {
         for (int i = vertices.size(); i > 1; i--) {
             for (int j = 1; j < i; j++) {
-                if (getGrau(vertices.get(j - 1).getId()) > getGrau(vertices.get(j).getId())) {
+                System.out.println("aushauhsuhauhs");
+                if (getGrau(vertices.get(j - 1).getId()) < getGrau(vertices.get(j).getId())) {
                     Collections.swap(vertices, j, j - 1);
+                    System.out.println("aush33333auhsuhauhs");
                 }
             }
         }
@@ -159,7 +162,9 @@ public class Grafo {
         int grau = 0;
         if (!orientado) {
             for (Vertice vertice : vertices) {
+                
                 if (vertice.getId() == verticeId) {
+                    
                     while (vertice.getAdjacente() != null) {
                         grau++;
                         vertice = vertice.getAdjacente();
@@ -170,7 +175,7 @@ public class Grafo {
                     if (vertice.getAdjacente().getId() == verticeId) {
                         grau++;
                     }
-                    vertice.getAdjacente();
+                    vertice = vertice.getAdjacente();
                 }
             }
         }
