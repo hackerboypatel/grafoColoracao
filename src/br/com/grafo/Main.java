@@ -51,7 +51,7 @@ public class Main {
                     povoarGrafo();
                     break;
                 case 5:
-                    //grafo.imprimirGrafo(); --implementar.
+                    grafo.imprimirGrafo();
                     break;
                 default:
             }
@@ -91,7 +91,7 @@ public class Main {
         String linha;
         BufferedReader reader;
         try {
-            reader = new BufferedReader(new FileReader("povoar"));
+            reader = new BufferedReader(new FileReader("povoar.txt"));
             StringTokenizer dado = null;
 
             while ((linha = reader.readLine()) != null) {

@@ -82,7 +82,7 @@ public class Grafo {
                     if (v.getAdjacente() == null) {
                         Vertice vertice2 = new Vertice();
                         vertice2.setId(v2);
-                        //vertice2.setPeso(peso);
+                        vertice2.setPeso(peso);
                         v.setAdjacente(vertice2);
 
                         Aresta addAresta = new Aresta();
@@ -148,10 +148,8 @@ public class Grafo {
     private ArrayList<Vertice> ordernarVertices() {
         for (int i = vertices.size(); i > 1; i--) {
             for (int j = 1; j < i; j++) {
-                System.out.println("aushauhsuhauhs");
                 if (getGrau(vertices.get(j - 1).getId()) < getGrau(vertices.get(j).getId())) {
                     Collections.swap(vertices, j, j - 1);
-                    System.out.println("aush33333auhsuhauhs");
                 }
             }
         }
@@ -162,9 +160,9 @@ public class Grafo {
         int grau = 0;
         if (!orientado) {
             for (Vertice vertice : vertices) {
-                
+
                 if (vertice.getId() == verticeId) {
-                    
+
                     while (vertice.getAdjacente() != null) {
                         grau++;
                         vertice = vertice.getAdjacente();
@@ -202,5 +200,20 @@ public class Grafo {
             }
         }
         return adja;
+    }
+
+    public void imprimirGrafo() {
+        vertices.stream().map((vertice) -> {
+            Vertice v = vertice;
+            System.out.print(vertice.getId()+"->");
+            while (v.getAdjacente() != null) {
+                System.out.print(v.getAdjacente().getId()+"("+v.getAdjacente().getPeso()+")");
+                System.out.print(",");
+                v = v.getAdjacente();
+            }
+            return vertice;
+        }).forEach((_item) -> {
+            System.out.println("");
+        });
     }
 }
