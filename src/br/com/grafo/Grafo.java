@@ -100,7 +100,7 @@ public class Grafo {
 
     public int[][] colorirGrafo(Grafo grafo) {
         String nomeCor[] = {"Azul","Roxo","Ciano","Rosa","Vermelho","Laranja","Verde","Violeta","Alizarina","Carmesim","Coral", "Escarlate","Magenta","Marrom","Amarelo"}; 
-        ArrayList<Integer> verticesAdjacentes = new ArrayList<Integer>();
+        ArrayList<Integer> verticesAdjacentes = new ArrayList<>();
         grafo.vertices = ordernarVertices();
         boolean colorir = true;
         int cor = 1;
