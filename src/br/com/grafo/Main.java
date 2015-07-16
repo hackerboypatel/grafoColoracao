@@ -66,6 +66,17 @@ public class Main {
 
 
     private static void inserirAresta() {
+        System.out.print("Aresta: ");
+        int a1 = ler.nextInt();
+        System.out.print("Aresta: ");
+        int a2 = ler.nextInt();
+        System.out.print("Peso: ");
+        int peso = ler.nextInt();
+        
+        if(grafo.inserirAresta(a1, a2, peso))
+            System.out.println("Aresta adicionada.");
+        else
+            System.out.println("Erro.");
     }
 
     private static void povoarGrafo() {
