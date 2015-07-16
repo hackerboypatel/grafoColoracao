@@ -99,6 +99,7 @@ public class Grafo {
     }
 
     public int[][] colorirGrafo(Grafo grafo) {
+        String nomeCor[] = {"Azul","Roxo","Ciano","Rosa","Vermelho","Laranja","Verde","Violeta","Alizarina","Carmesim","Coral", "Escarlate","Magenta","Marrom","Amarelo"}; 
         ArrayList<Integer> verticesAdjacentes = new ArrayList<Integer>();
         grafo.vertices = ordernarVertices();
         boolean colorir = true;
@@ -138,8 +139,7 @@ public class Grafo {
             }
         }
         for (int i = 0; i < cores[0].length; i++) {
-            String nomeCor[] = {"Azul","Roxo","Ciano","Rosa","Vermelho","Laranja","Verde","Violeta","Alizarina","Carmesim","Coral", "Escarlate","Magenta","Marrom","Amarelo"}; 
-            System.out.print("Vertice:" + cores[0][i] + "("+ nomeCor[cores[1][i]]+")\n");
+            System.out.print("Vertice:" + cores[0][i] + "("+nomeCor[cores[1][i]]+")\n");
         }
         return cores;
     }
